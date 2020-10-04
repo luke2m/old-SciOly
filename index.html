@@ -10,11 +10,163 @@
     <meta name="description" content="Learn more about and join Hudson Middle School Science Olympiad.">
     <link rel="stylesheet" href="/water.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="https://use.fontawesome.com/c3dc2f3a63.js"></script>
 
 
 
     <style>
+        .circular-menu {
+            position: fixed;
+            bottom: 1em;
+            right: 1em;
+        }
+
+        .circular-menu .floating-btn {
+            display: block;
+            width: 3.5em;
+            height: 3.5em;
+            border-radius: 50%;
+            background-color: hsl(4, 98%, 60%);
+            box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, .26);
+            color: hsl(0, 0%, 100%);
+            text-align: center;
+            line-height: 3.9;
+            cursor: pointer;
+            outline: 0;
+        }
+
+        .circular-menu.active .floating-btn {
+            box-shadow: inset 0 0 3px hsla(0, 0%, 0%, .3);
+        }
+
+        .circular-menu .floating-btn:active {
+            box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, .4);
+        }
+
+        .circular-menu .floating-btn i {
+            font-size: 1.3em;
+            transition: transform .2s;
+        }
+
+        .circular-menu.active .floating-btn i {
+            transform: rotate(-45deg);
+        }
+
+        .circular-menu:after {
+            display: block;
+            content: ' ';
+            width: 3.5em;
+            height: 3.5em;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -2;
+            background-color: hsl(4, 98%, 60%);
+            transition: all .3s ease;
+        }
+
+        .circular-menu.active:after {
+            transform: scale3d(5.5, 5.5, 1);
+            transition-timing-function: cubic-bezier(.68, 1.55, .265, 1);
+        }
+
+        .circular-menu .items-wrapper {
+            padding: 0;
+            margin: 0;
+        }
+
+        .circular-menu .menu-item {
+            position: absolute;
+            top: .2em;
+            right: .2em;
+            z-index: -1;
+            display: block;
+            text-decoration: none;
+            color: hsl(0, 0%, 100%);
+            font-size: 1em;
+            width: 3em;
+            height: 3em;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 3;
+            background-color: hsla(0, 0%, 0%, .1);
+            transition: transform .3s ease, background .2s ease;
+        }
+
+        .circular-menu .menu-item:hover {
+            background-color: hsla(0, 0%, 0%, .3);
+        }
+
+        .circular-menu.active .menu-item {
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .circular-menu.active .menu-item:nth-child(1) {
+            transform: translate3d(1em, -7em, 0);
+        }
+
+        .circular-menu.active .menu-item:nth-child(2) {
+            transform: translate3d(-3.5em, -6.3em, 0);
+        }
+
+        .circular-menu.active .menu-item:nth-child(3) {
+            transform: translate3d(-6.5em, -3.2em, 0);
+        }
+
+        .circular-menu.active .menu-item:nth-child(4) {
+            transform: translate3d(-7em, 1em, 0);
+        }
+
+        /**
+ * The other theme for this menu
+ */
+
+        .circular-menu.circular-menu-left {
+            right: auto;
+            left: 1em;
+        }
+
+        .circular-menu.circular-menu-left .floating-btn {
+            background-color: hsl(217, 89%, 61%);
+        }
+
+        .circular-menu.circular-menu-left:after {
+            background-color: hsl(217, 89%, 61%);
+        }
+
+        .circular-menu.circular-menu-left.active .floating-btn i {
+            transform: rotate(90deg);
+        }
+
+        .circular-menu.circular-menu-left.active .menu-item:nth-child(1) {
+            transform: translate3d(-1em, -7em, 0);
+        }
+
+        .circular-menu.circular-menu-left.active .menu-item:nth-child(2) {
+            transform: translate3d(3.5em, -6.3em, 0);
+        }
+
+        .circular-menu.circular-menu-left.active .menu-item:nth-child(3) {
+            transform: translate3d(6.5em, -3.2em, 0);
+        }
+
+        .circular-menu.circular-menu-left.active .menu-item:nth-child(4) {
+            transform: translate3d(7em, 1em, 0);
+        }
+
+    </style>
+
+
+    <style>
+        #wrapper {
+            width: 70%;
+            /* specify a width! */
+            margin: 0 auto;
+            /* center */
+        }
+
+
         @keyframes slidy {
             0% {
                 left: 0%;
@@ -80,241 +232,258 @@
 </head>
 
 <body>
-        <h1>
-            HMS Science Olympiad
-        </h1>
-        <h2> Join Science Olympiad!</h2>
-        <p>Note - this website is a work in progress.
-        </p>
-        <p style="text-align:center;">
-        <div id="slider">
-            <figure>
-                <img src="/img/logo.JPG" alt="logo">
-                <img src="/img/study.JPG" alt="Studying">
-                <img src="/img/trophy.jpg" alt="Trophy">
-                <img src="/img/build.JPG" alt="Building">
-                <img src="/img/team.JPG" alt="Team">
+
+    <h1>
+        HMS Science Olympiad
+    </h1>
+    <h2> Join Science Olympiad!</h2>
+    <p>Note - this website is a work in progress.
+    </p>
+    <p style="text-align:center;">
+    <div id="slider">
+        <figure>
+            <img src="/img/logo.JPG" alt="logo">
+            <img src="/img/study.JPG" alt="Studying">
+            <img src="/img/trophy.jpg" alt="Trophy">
+            <img src="/img/build.JPG" alt="Building">
+            <img src="/img/team.JPG" alt="Team">
 
 
-            </figure>
-  </div>
+        </figure>
+    </div>
+    </p>
 
 
 
-        <h3>Watch <a href="https://youtu.be/Y19-EAbRHOI">this video </a>for more information.</h3>
-        <h3>Please contact Dr. Renna at <a href=mailto:jrenna@uakron.edu>jrenna@uakron.edu</a> if you have any questions.</h3>
+    <h3>Watch <a href="https://youtu.be/Y19-EAbRHOI">this video </a>for more information.</h3>
+    <h3>Please contact Dr. Renna at <a href=mailto:jrenna@uakron.edu>jrenna@uakron.edu</a> if you have any questions.</h3>
 
-        <h2> What is Science Olympiad? </h2>
+    <h2> What is Science Olympiad? </h2>
+    <hr />
+    <p> Science Olympiad is an extracurricular activity where we learn about all forms of science. We compete against other teams, and the competitions are like track meets, with 23 different events. Science Olympiad requires practice, determination, and preparation. </p>
+
+    <h2>What are the events?
+    </h2>
+
+    <div>
         <hr />
-        <p> Science Olympiad is an extracurricular activity where we learn about all forms of science. We compete against other teams, and the competitions are like track meets, with 23 different events. Science Olympiad requires practice, determination, and preparation. </p>
+        <h3> Life, Personal & Social Science
+        </h3>
+        <details>
+            <summary> Anatomy and Physiology
+            </summary>
 
-        <h2>What are the events?
-        </h2>
+            <p>
+                Participants will be assessed on their understanding of the anatomy and physiology for the human Skeletal, Muscular and Integumentary systems.
+            </p>
+        </details>
+        <details>
+            <summary>
+                Disease Detectives
+            </summary>
 
-        <div>
-            <hr />
-            <h3> Life, Personal & Social Science
-            </h3>
-            <details>
-                <summary> Anatomy and Physiology
-                </summary>
+            <p>
+                Participants will use investigative skills in the scientific study of disease, injury, health and disability in populations or groups of people.
+            </p>
+        </details>
+        <details>
+            <summary> Heredity
+            </summary>
 
-                <p>
-                    Participants will be assessed on their understanding of the anatomy and physiology for the human Skeletal, Muscular and Integumentary systems.
-                </p>
-            </details>
-            <details>
-                <summary>
-                    Disease Detectives
-                </summary>
+            <p>
+                Participants will solve problems and analyze data or diagrams using their knowledge of the basic principles of genetics.
+            </p>
+        </details>
+        <details>
+            <summary> Ornithology </summary>
 
-                <p>
-                    Participants will use investigative skills in the scientific study of disease, injury, health and disability in populations or groups of people.
-                </p>
-            </details>
-            <details>
-                <summary> Heredity
-                </summary>
+            <p>
+                Participants will solve problems and analyze data or diagrams using their knowledge of the basic principles of genetics.
+            </p>
+        </details>
+        <details>
+            <summary> Water Quality
+            </summary>
 
-                <p>
-                    Participants will solve problems and analyze data or diagrams using their knowledge of the basic principles of genetics.
-                </p>
-            </details>
-            <details>
-                <summary> Ornithology </summary>
+            <p>
+                Participants will be assessed on their understanding and evaluation of marine and estuary aquatic environments.</p>
+        </details>
 
-                <p>
-                    Participants will solve problems and analyze data or diagrams using their knowledge of the basic principles of genetics.
-                </p>
-            </details>
-            <details>
-                <summary> Water Quality
-                </summary>
+        <h3> Earth and Space Science
+        </h3>
+        <details>
+            <summary> Dynamic Planet
+            </summary>
 
-                <p>
-                    Participants will be assessed on their understanding and evaluation of marine and estuary aquatic environments.</p>
-            </details>
+            <p>
+                Teams will complete tasks related to physical and geological oceanography.
+            </p>
+        </details>
+        <details>
+            <summary> Fossils
+            </summary>
 
-            <h3> Earth and Space Science
-            </h3>
-            <details>
-                <summary> Dynamic Planet
-                </summary>
+            <p>
+                Teams identify and classify fossils and demonstrate their knowledge of ancient life by completing tasks related to interpretation of past environments and ecosystems, adaptations and evolutionary relationships, and use of fossils in dating and correlating rock units.
+            </p>
+        </details>
+        <details>
+            <summary> Meteorology
+            </summary>
 
-                <p>
-                    Teams will complete tasks related to physical and geological oceanography.
-                </p>
-            </details>
-            <details>
-                <summary> Fossils
-                </summary>
+            <p>
+                Participants will be assessed on their understanding of the anatomy and physiology for the human Skeletal, Muscular and Integumentary systems.
+            </p>
+        </details>
+        <details>
+            <summary> Reach for the Stars
+            </summary>
 
-                <p>
-                    Teams identify and classify fossils and demonstrate their knowledge of ancient life by completing tasks related to interpretation of past environments and ecosystems, adaptations and evolutionary relationships, and use of fossils in dating and correlating rock units.
-                </p>
-            </details>
-            <details>
-                <summary> Meteorology
-                </summary>
+            <p>
+                Students will demonstrate an understanding of the properties and evolution of stars and galaxies as well as their observation using different portions of the electromagnetic spectrum (e.g. Radio, Infrared, Visible, Ultraviolet, X-Ray and Gamma Ray).
+            </p>
+        </details>
+        <details>
+            <summary> Road Scholar
+            </summary>
 
-                <p>
-                    Participants will be assessed on their understanding of the anatomy and physiology for the human Skeletal, Muscular and Integumentary systems.
-                </p>
-            </details>
-            <details>
-                <summary> Reach for the Stars
-                </summary>
+            <p>
+                Participants will answer interpretive questions that may use one or more state highway maps, USGS topographic maps, Internet-generated maps, a road atlas or satellite/aerial images.
+            </p>
+        </details>
+        <h3> Physical Science and Chemistry
+        </h3>
+        <details>
+            <summary> Circuit Lab
+            </summary>
 
-                <p>
-                    Students will demonstrate an understanding of the properties and evolution of stars and galaxies as well as their observation using different portions of the electromagnetic spectrum (e.g. Radio, Infrared, Visible, Ultraviolet, X-Ray and Gamma Ray).
-                </p>
-            </details>
-            <details>
-                <summary> Road Scholar
-                </summary>
+            <p>
+                Participants must complete tasks and answer questions about electricity and magnetism.
+            </p>
+        </details>
+        <details>
+            <summary> Crime Busters
+            </summary>
 
-                <p>
-                    Participants will answer interpretive questions that may use one or more state highway maps, USGS topographic maps, Internet-generated maps, a road atlas or satellite/aerial images.
-                </p>
-            </details>
-            <h3> Physical Science and Chemistry
-            </h3>
-            <details>
-                <summary> Circuit Lab
-                </summary>
+            <p>
+                Given a scenario, a collection of evidence, and possible suspects, students will perform a series of tests that along with other evidence will be used to solve a crime.
+            </p>
+        </details>
+        <details>
+            <summary> Density Lab
+            </summary>
 
-                <p>
-                    Participants must complete tasks and answer questions about electricity and magnetism.
-                </p>
-            </details>
-            <details>
-                <summary> Crime Busters
-                </summary>
+            <p>
+                Participants compete in activities and answer questions about mass, density, number density, area density, concentration, pressure and buoyancy.
+            </p>
+        </details>
+        <details>
+            <summary> Food Science
+            </summary>
 
-                <p>
-                    Given a scenario, a collection of evidence, and possible suspects, students will perform a series of tests that along with other evidence will be used to solve a crime.
-                </p>
-            </details>
-            <details>
-                <summary> Density Lab
-                </summary>
+            <p>
+                Students will answer questions on food chemistry with a focus on fermentation and pickling. In addition, participants will build a salinometer/hydrometer capable of measuring salt compositions between 1-10% (mass/volume).
+            </p>
+        </details>
+        <details>
+            <summary> Machines
+            </summary>
 
-                <p>
-                    Participants compete in activities and answer questions about mass, density, number density, area density, concentration, pressure and buoyancy.
-                </p>
-            </details>
-            <details>
-                <summary> Food Science
-                </summary>
+            <p>
+                Teams will complete a written test on simple and compound machine concepts and construct a lever-based measuring device prior to the tournament to determine the ratio between two masses.
+            </p>
+        </details>
 
-                <p>
-                    Students will answer questions on food chemistry with a focus on fermentation and pickling. In addition, participants will build a salinometer/hydrometer capable of measuring salt compositions between 1-10% (mass/volume).
-                </p>
-            </details>
-            <details>
-                <summary> Machines
-                </summary>
+        <h3>Technology and Engineering
+        </h3>
+        <details>
+            <summary> Boomilever
+            </summary>
+            <p>
+                Teams will design and build a Boomilever meeting requirements specified in the rules to achieve the highest structural efficiency.
+            </p>
+        </details>
+        <details>
+            <summary> Elastic Launched Gliders
+            </summary>
 
-                <p>
-                    Teams will complete a written test on simple and compound machine concepts and construct a lever-based measuring device prior to the tournament to determine the ratio between two masses.
-                </p>
-            </details>
+            <p>
+                Prior to the tournament teams design, construct, and test elastic launched gliders to achieve the maximum time aloft.
+            </p>
+        </details>
+        <details>
+            <summary> Mission Possible
+            </summary>
 
-            <h3>Technology and Engineering
-            </h3>
-            <details>
-                <summary> Boomilever
-                </summary>
-                <p>
-                    Teams will design and build a Boomilever meeting requirements specified in the rules to achieve the highest structural efficiency.
-                </p>
-            </details>
-            <details>
-                <summary> Elastic Launched Gliders
-                </summary>
+            <p>
+                Prior to the competition, participants design, build, test and document a Rube Goldberg-like device that completes required Start and Final Actions through a series of specific actions.
+            </p>
+        </details>
+        <details>
+            <summary> Mousetrap Vehicle
+            </summary>
 
-                <p>
-                    Prior to the tournament teams design, construct, and test elastic launched gliders to achieve the maximum time aloft.
-                </p>
-            </details>
-            <details>
-                <summary> Mission Possible
-                </summary>
+            <p>
+                Teams design, build and test one vehicle using one mousetrap as its sole means of propulsion to reach a target as quickly and accurately as possible.
+            </p>
+        </details>
 
-                <p>
-                    Prior to the competition, participants design, build, test and document a Rube Goldberg-like device that completes required Start and Final Actions through a series of specific actions.
-                </p>
-            </details>
-            <details>
-                <summary> Mousetrap Vehicle
-                </summary>
+        <h3>Inquiry and Nature of Science
+        </h3>
 
-                <p>
-                    Teams design, build and test one vehicle using one mousetrap as its sole means of propulsion to reach a target as quickly and accurately as possible.
-                </p>
-            </details>
+        <details>
+            <summary> Experimental Design
+            </summary>
 
-            <h3>Inquiry and Nature of Science
-            </h3>
+            <p>
+                This event will determine a participant's ability on-site to design, conduct and report the findings of an experiment.
+            </p>
+        </details>
+        <details>
+            <summary> Game On
+            </summary>
 
-            <details>
-                <summary> Experimental Design
-                </summary>
+            <p>
+                This event will determine a team's ability to design and build an original computer game using the program Scratch incorporating the scientific theme provided to them by the supervisor.
 
-                <p>
-                    This event will determine a participant's ability on-site to design, conduct and report the findings of an experiment.
-                </p>
-            </details>
-            <details>
-                <summary> Game On
-                </summary>
+            </p>
+        </details>
+        <details>
+            <summary> Ping-Pong Parachute
+            </summary>
 
-                <p>
-                    This event will determine a team's ability to design and build an original computer game using the program Scratch incorporating the scientific theme provided to them by the supervisor.
+            <p>
+                Prior to the tournament, teams will design, build and bring up to two bottle rockets to the tournament to launch a ping pong ball attached to a parachute to stay aloft for the greatest amount of time.
+            </p>
+        </details>
+        <details>
+            <summary> Write It Do It
+            </summary>
 
-                </p>
-            </details>
-            <details>
-                <summary> Ping-Pong Parachute
-                </summary>
+            <p>
+                One student will write a description of an object and how to build it, and then the other student will attempt to construct the object from this description.
+            </p>
+        </details>
+    </div>
+    <p>Event descriptions from SOINC </p>
 
-                <p>
-                    Prior to the tournament, teams will design, build and bring up to two bottle rockets to the tournament to launch a ping pong ball attached to a parachute to stay aloft for the greatest amount of time.
-                </p>
-            </details>
-            <details>
-                <summary> Write It Do It
-                </summary>
 
-                <p>
-                    One student will write a description of an object and how to build it, and then the other student will attempt to construct the object from this description.
-                </p>
-            </details>
-        </div>
-        <p>Event descriptions from SOINC </p>
-        <p><a href="/contact.html"> Contact or contribute </a></p> <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fscioly.netlify.app&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visits&edge_flat=true" alt="Hit counter" align="right" />
 
-    
+    </div>
+    <div id="circularMenu1" class="circular-menu circular-menu-left active">
+
+        <a class="floating-btn" onclick="document.getElementById('circularMenu1').classList.toggle('active');">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <menu class="items-wrapper">
+            <a href="https://scioly.netlify.app" class="menu-item fa fa-home"></a>
+            <a href="https://hudson.k12.oh.us" class="menu-item fa fa-graduation-cap"></a>
+            <a href="/contact.html" class="menu-item fa fa-envelope"></a>
+            <a href="/links.html" class="menu-item fa fa-link"></a>
+        </menu>
+
+    </div>
 </body>
 
 </html>
