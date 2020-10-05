@@ -7,6 +7,7 @@
     </title>
 
     <link rel="stylesheet" href="/water.css">
+  <link rel="stylesheet" href="/menu.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://use.fontawesome.com/c3dc2f3a63.js"></script>
 </head>
@@ -43,6 +44,21 @@
         </fieldset>
     </form>
     <p> <a href=/index.html> Back </a> </p>
+  
+    <div id="circularMenu1" class="circular-menu circular-menu-left active">
+
+        <a class="floating-btn" onclick="document.getElementById('circularMenu1').classList.toggle('active');">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <menu class="items-wrapper">
+            <a href="https://scioly.netlify.app" class="menu-item fa fa-home"></a>
+            <a href="https://www.hudson.k12.oh.us" class="menu-item fa fa-graduation-cap"></a>
+            <a href="/contact.html" class="menu-item fa fa-envelope"></a>
+            <a href="/links.html" class="menu-item fa fa-link"></a>
+        </menu>
+
+    </div>
 </body>
 
 </html>
