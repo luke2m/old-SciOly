@@ -33,7 +33,7 @@
         }
 
         .circular-menu.active .floating-btn i {
-            transform: rotate(-45deg);
+            transform: rotate(-90deg);
         }
 
         .circular-menu:after {
