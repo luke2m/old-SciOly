@@ -107,7 +107,7 @@ html {
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     line-height: 1.4;
     max-width: 800px;
     margin: 20px auto;
@@ -246,6 +246,7 @@ h3,
 h4,
 h5,
 h6 {
+    font-family: 'Space Mono', monospace;
     margin-bottom: 12px;
     margin-top: 24px;
 }
@@ -277,6 +278,7 @@ h2 {
 }
 
 h3 {
+
     color: #000;
     color: var(--text-bright);
 }
@@ -290,6 +292,7 @@ h3 {
 }
 
 h4 {
+    font-family: 'Work Sans', sans-serif;
     color: #000;
     color: var(--text-bright);
 }
@@ -344,7 +347,7 @@ strong {
 h1,
 h2,
 h3,
-h4,
+h4
 h5,
 h6,
 b,
