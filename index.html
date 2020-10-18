@@ -24,11 +24,9 @@
     <link rel="stylesheet" href="/menu.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Work+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
 
-     <style>
-
-
+    <style>
         @keyframes slidy {
             0% {
                 left: 0%;
@@ -73,9 +71,9 @@
 
         div#slider {
             overflow: hidden;
-          display: block;
-    margin-left: auto;
-    margin-right: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         div#slider figure img {
@@ -105,13 +103,18 @@
     <p>Note - this website is a work in progress.
     </p>
     <p style="text-align:center;">
-    <div id="slider">
-        <figure>
-            <img src="/img/logo.JPG" alt="logo">
+        <script src="/cssslidy.js"> </script>
+        <script>
+            cssSlidy();
+
+        </script>
+    <div id="slidy-container">
+        <figure id="slidy">
+            <img src="/img/logo.JPG" alt="logo" data-caption="HMS SciOly Logo">
             <img src="/img/study.JPG" alt="Studying">
-            <img src="/img/trophy.jpg" alt="Trophy">
+            <img src="/img/trophy.jpg" alt="4th place at Kenston Invitational">
             <img src="/img/build.JPG" alt="Building">
-            <img src="/img/team.JPG" alt="Team">
+            <img src="/img/team.JPG" alt="The team">
 
 
         </figure>
@@ -125,9 +128,9 @@
     <h2> What is Science Olympiad? </h2>
     <hr />
     <p> Science Olympiad is an extracurricular activity where we learn about all forms of science. We compete against other teams, and the competitions are like track meets, with 23 different events. Events are in three major categories: build, test, and lab. Most events are done with a partner. Science Olympiad requires practice, determination, and preparation. </p>
-  <h2> What are the practices like? </h2>
-<hr />
-  <p>We meet every monday from 6:00 to 8:00 P.M. Currently, all meetings are done virtually. Studying outside organized practices is encouraged.</p>
+    <h2> What are the practices like? </h2>
+    <hr />
+    <p>We meet every monday from 6:00 to 8:00 P.M. Currently, all meetings are done virtually. Studying outside organized practices is encouraged.</p>
 
     <h2>What are the events?
     </h2>
@@ -333,10 +336,10 @@
         </details>
     </div>
     <p>Event descriptions from SOINC </p>
-<br />
- <br />
-  <br />
-  <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
     <div id="circularMenu1" class="circular-menu circular-menu-left active">
 
@@ -352,6 +355,7 @@
         </menu>
 
     </div>
+
 </body>
 
 </html>
