@@ -139,13 +139,7 @@
             transform: translate3d(7em, 1em, 0);
         }
 
-    </style>
-
-
-    <style>
-
-
-        @keyframes slidy {
+        </style > <style > @keyframes slidy {
             0% {
                 left: 0%;
             }
